@@ -1,0 +1,23 @@
+.boton {
+  background-color: #c35617;
+  border: 1px solid #c35617;
+  border-radius: 15px;
+  width: 100px;
+}
+
+.boton:hover {
+  width: 105px;
+}
+
+.eleccionA,
+.eleccionB {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 220px;
+}
+
+.eleccionA,
+.eleccionB p {
+  text-align: center;
+}

@@ -1,0 +1,22 @@
+.contenedor {
+  background: linear-gradient(45deg, black, #4a02f7);
+  border-radius: 15px;
+  color: white;
+  margin: auto;
+  margin-top: 100px;
+  width: 50%;
+}
+
+.titulo-principal {
+  text-align: center;
+  padding: 10px;
+}
+
+.texto-principal {
+  padding: 10px;
+}
+
+.contenedor-decisiones {
+  display: flex;
+  justify-content: space-evenly;
+}
