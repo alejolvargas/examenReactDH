@@ -4,16 +4,6 @@ import Historial from "./components/Historial";
 import data from "./components/data.json";
 import "./App.css";
 
-/* const  App = () => (
-  <div>
-    asda
-    <Elecciones/>
-    <Historial/>
-  </div>
-)
-export default App;
- */
-
 const controlHistoria = [];
 export default class App extends Component {  
   state = {
@@ -28,43 +18,43 @@ export default class App extends Component {
   }
 
     handleClick = (e) => {
-    const id = e.target.id;  //obtiene la identificacion del boton en el que se hizo click
-    if (this.state.contador >= 7) {
-    
-    } else if (id === "A" && this.state.seleccionPrevia !== "A") {
-      this.setState({
-        contador: this.state.contador + 1,
-        seleccionPrevia: "A",
-      });
-    }else if (id === "A" && this.state.seleccionPrevia === "A") {
-      this.setState({
-        contador: this.state.contador + 2,
-          seleccionPrevia: "A",
-      });
-    } else if (id === "B" && this.state.seleccionPrevia === "A") {
-      this.setState({
-        contador: this.state.contador + 3,
-        seleccionPrevia: "B",
-      });
-    } else if (id === "B") {
-      this.setState({
-        contador: this.state.contador + 2,
-        seleccionPrevia: "B",
-      });
+    const id = e.target.id;  //obtiene la identificacion (id) del boton en el que se hizo click 
+
+    switch (id) {
+      case "A":
+        if (this.state.seleccionPrevia !== "A") {
+          this.setState({
+            contador: this.state.contador + 1,
+            seleccionPrevia: "A"
+          });
+        } else {
+          this.setState({
+            contador: this.state.contador + 2,
+            seleccionPrevia: "A"
+          });
+        }
+        break;
+      case "B":
+        this.setState({
+          contador: this.state.contador + 2,
+          seleccionPrevia: "B"
+        });
+        if (this.state.seleccionPrevia === "A") {
+          this.setState({
+            contador: this.state.contador + 3,
+            seleccionPrevia: "B"
+          });
+        }
+        break;
+      default:
     }
- /*    console.log(controlHistoria); */
-  };
-
-
+    };
   render(){
     return(
   <div className ="contenedor">
         <h1 className ="titulo-principal">ELIGE TU CAMINO</h1>
         <p className ="texto-principal">{data[this.state.contador].id}-{data[this.state.contador].historia}-</p>
-      
-        
-        
-        <div className ="contenedor-decisiones">
+  <div className ="contenedor-decisiones">
     <Elecciones
          handleClick = {this.handleClick}
           eleccionA = {data[this.state.contador].opciones.a}
