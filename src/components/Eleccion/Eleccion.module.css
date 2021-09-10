@@ -21,3 +21,18 @@
 .eleccionB p {
   text-align: center;
 }
+
+@media only screen and (max-width: 640px) {
+  .boton {
+    width: 50px;
+  }
+
+  .boton:hover {
+    width: 55px;
+  }
+  .eleccionA,
+  .eleccionB {
+    margin: auto;
+    width: 100px;
+  }
+}
