@@ -8,10 +8,10 @@ class Historial extends Component{
     return(
       <div >
         <h3>Ultima Eleccion: {this.props.seleccionPrevia}</h3>
-        <h4>Anteriores : </h4>
-        <ul className ={stilo.listado}>
-            {this.props.historial}
-       </ul>
+        <div className = {stilo.anteriores}>
+          <h4>Anteriores : </h4>
+          <ul className ={stilo.listado}>{this.props.historial}</ul>
+       </div>
       </div>
     );
   }

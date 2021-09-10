@@ -1,3 +1,9 @@
 .listado {
+  display: contents;
   list-style: none;
+}
+
+.anteriores {
+  display: flex;
+  justify-content: space-around;
 }

@@ -9,11 +9,11 @@ class Elecciones extends Component{
     return(
         <div>
             <div className ={stilo.eleccionA}>
-              <button id ="A" className = {stilo.boton} onClick={this.props.handleClick}>A</button>
+              <button id ="A" className = {stilo.boton} onClick={this.props.handleClick}  disabled ={this.props.desamble}>A</button>
               <p> {this.props.eleccionA}</p>
             </div>
             <div className ={stilo.eleccionB}>
-              <button id ="B" className = {stilo.boton} onClick={this.props.handleClick} >B</button>
+              <button id ="B" className = {stilo.boton} onClick={this.props.handleClick} disabled ={this.props.desamble}>B</button>
               <p> {this.props.eleccionB}</p>
             </div>
         </div>
